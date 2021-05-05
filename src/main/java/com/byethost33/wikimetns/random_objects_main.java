@@ -143,8 +143,8 @@ public class random_objects_main
         basalt_i = new basalt_item();
         //basalt_block = new basalt_block("basalt_block", Material.ROCK);
         basalt_block_item = new ItemBlock(random_objects_main.basalt_block).setRegistryName(random_objects_main.basalt_block.getRegistryName());
-        basalt_ingot = new basic_item("basalt_ingot", "basalt_ingot", CreativeTabs.MATERIALS);
-        basalt_fragment = new basic_item("basalt_fragment", "basalt_fragment", CreativeTabs.MATERIALS);
+        basalt_ingot = new basic_item("basalt_ingot", "basalt_ingot", romodCreativeTabs);
+        basalt_fragment = new basic_item("basalt_fragment", "basalt_fragment", romodCreativeTabs);
         double_houe = new double_houe();
         redstone_stick = new redstone_stick();
         wheel_barrows = new wheel_barrows("wheel_barrows", Material.WOOD);

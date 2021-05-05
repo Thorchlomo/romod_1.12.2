@@ -1,0 +1,20 @@
+[
+{
+  "modid": "romod",
+  "name": "random objects",
+  "description": "a mod that add random (and useful) items",
+  "version": "1.0.1",
+  "mcversion": "1.12.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["thorchlomo","prysonnier0"],
+  "credits": "mikaki9 at the developement architecture
+prysonnier0 at the texture departement
+mikaki9 at the compilation
+thanks to myster_ben and amvolf for certains of ideas were used
+and thanks to YOU for the download",
+  "logoFile": "/logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]

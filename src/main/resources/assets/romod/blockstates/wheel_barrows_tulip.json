@@ -1,0 +1,18 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "romod:wheel_barrows_tulip"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}],
+    "facing": {
+      "north": {"y":90},
+      "south": {"y": 270},
+      "west": {"y": 0},
+      "east": {"y": 180},
+      "up": {"x": 0},
+      "down": {"x": -180}
+    }
+  }
+}

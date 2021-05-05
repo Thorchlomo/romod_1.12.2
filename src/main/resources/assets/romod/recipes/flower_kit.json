@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    "#X#",
+    " O "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:glass_pane"
+    },
+    "X": {
+      "item": "minecraft:red_flower",
+      "data": 0
+    },
+    "O": {
+      "item": "minecraft:flower_pot"
+    }
+  },
+  "result": {
+    "item": "romod:flower_kit"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "# #",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "romod:basalt_ingot"
+    }
+  },
+  "result": {
+    "item": "romod:basalt_leggings"
+  }
+}
+

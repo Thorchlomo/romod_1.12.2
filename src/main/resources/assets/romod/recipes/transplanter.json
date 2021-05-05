@@ -1,0 +1,17 @@
+{
+	"type":"minecraft:crafting_shaped",
+	"pattern":[
+		"#  ",
+		" X ",
+		"  O"],
+	"key":{
+		"#":{"item": "minecraft:log",
+      		 "data": 0
+      	},
+		"X":{"item":"minecraft:iron_bars"},
+		"O":{"item":"minecraft:heavy_weighted_pressure_plate"}
+	},
+	"result":{
+		"item":"romod:transplanter"
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "romod:basalt_i"
+		},
+		{
+			"item": "minecraft:wooden_axe"
+		}
+	],
+	"result": {
+		"item": "romod:basalt_fragment",
+		"count":  1
+	}
+}

@@ -8,6 +8,7 @@ public class basic_item extends Item{
 	public basic_item(String registryName, String unlocalizedName, CreativeTabs creativetab) {
 		this.setRegistryName(registryName);
 		this.setUnlocalizedName(unlocalizedName);
+		this.setCreativeTab(creativetab);
 	}
 	
 }

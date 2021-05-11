@@ -1,6 +1,6 @@
 package com.byethost33.wikimetns.item;
 
-import net.minecraft.creativetab.CreativeTabs;
+import com.byethost33.wikimetns.random_objects_main;
 import net.minecraft.item.Item;
 
 public class basalt_item extends Item{
@@ -8,8 +8,12 @@ public class basalt_item extends Item{
 	{
 		this.setRegistryName("basalt_i");
 		this.setUnlocalizedName("basalt_i");
-		this.setCreativeTab(CreativeTabs.MISC);
-		
+		this.setCreativeTab(random_objects_main.romodCreativeTabs);
+		this.setMaxDamage(32);
 	}
+	
+	
+	
+	
 
 }

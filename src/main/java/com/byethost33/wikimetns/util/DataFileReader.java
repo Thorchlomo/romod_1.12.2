@@ -11,21 +11,46 @@ import java.util.List;
 
 import com.byethost33.wikimetns.random_objects_main;
 
+/**
+ *  <strong>DataFileReader</strong> is used in some class to interact with files on disk
+ *  
+ *  
+ *  There's 2 mods:
+ *  <ul>
+ *  <li>ReadData, for the Favorite and for debug to avoid crahs
+ *  <li>Friends, for save, update and read friends on disk
+ *  </ul>
+ * 
+ * 
+ * @author Thorchlomo
+ *
+ */
 public class DataFileReader {
 	
 	public final static String pathToFriends = "list_of_friends_romod.txt";
 	
+	/** 
+	 * truth table :
+	 * 
+	 * <ul>
+	 * <li> 0 : Debug</li>
+	 * <li> 1 : Read all the file</li>
+	 * <li> 2 : Modify the specified line</li>
+	 * <li> 3 : Initialize</li>
+	 * </ul>
+	 * 
+	 * 
+	 * P.S. : Mode take the following value, listed above
+	 * 
+	 * @param [int] mode, [String] data
+	 * 
+	 * 
+	 * @author Thorchlomo
+	 * @version 1.3
+	 * 
+	 */
 	public static List<String> ReadData(int mode,String data) throws IOException{
-		/** 
-		 * truth table :
-		 * 0|debug
-		 * 1|read all the file
-		 * 2|modify the specified line
-		 * 3|initialize
-		 * 
-		 * 
-		 * 
-		**/
+		
 		//creating the variables
 		
 		File fichier = new File("romod_data.txt");
@@ -183,6 +208,25 @@ public class DataFileReader {
 		return list;
 	}
 	
+	
+	/**
+	 * 
+	 * Friends is used to interact with the friends stored on disk
+	 * 
+	 * Truth table :
+	 * <ul>
+	 * <li> 1 : Get the list of current Friends</li>
+	 * <li> 2 : Remove a Friends :(</li>
+	 * <li> 3 : Add a Friends :)</li>
+	 * <ul>
+	 * 
+	 * 
+	 * 
+	 * @param mode
+	 * @param data
+	 * @return An list of current friends
+	 * @throws IOException
+	 */
 	public static List<String> Friends(int mode,String data) throws IOException{
 		
 		
@@ -212,14 +256,6 @@ public class DataFileReader {
 	        }
 		
 		}
-		
-		/**
-		 * Truth table :
-		 * 0 | get the list of friends
-		 * 1 | remove a friends
-		 * 2 | add a friends
-		 *
-		 */
 		
 		
 		try {

@@ -1,2 +1,38 @@
 item.basalt_sword.name=Basalt Sword
 item.basalt_i.name=Basalt
+item.basalt_block.name=Basalt Block
+item.basalt_fragment.name=Basalt Fragment
+item.basalt_ingot.name=Basalt Ingot
+item.double_houe.name=Double Houe
+item.redstone_stick.name=Redstone Stick
+item.basalt_block_item.name=Basalt Block
+item.wheel_barrows.name=Wheelbarrow
+item.transplanter.name=Transplanter
+item.dirt_bag.name=Dirt Bag
+item.flower_kit.name=Flower Kit
+tile.basalt_block.name=Basalt Block
+tile.wheel_barrows.name=Wheelbarrow
+item.basalt_helmet.name=Basalt Helmet
+item.basalt_chestplate.name=Basalt Chestplate
+item.basalt_leggings.name=Basalt Leggings
+item.basalt_boots.name=Basalt Boots
+
+
+
+
+command.whereiam.usage=/whereiam = Get your currently position very precisely.
+
+romod.get_coords.key=Get Coordinates
+romod.main_menu.key=Main Menu Of Random Objects
+
+romod.gui.menu.like=Add To Favourites
+romod.gui.menu.saturation=Saturation
+romod.gui.menu.friends.list=Friends 
+romod.gui.menu.friends.connected=Connected Friends :
+romod.gui.menu.friends.too= more...
+romod.gui.menu.friends.add=Add a friend
+romod.gui.menu.friends.add.2=Add
+romod.gui.menu.friends.remove=Remove
+
+
+itemGroup.ROMOD=Random Objects

@@ -1,6 +1,5 @@
 package com.byethost33.wikimetns;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemSword;
 
 public class CustomSword extends ItemSword {
@@ -10,7 +9,7 @@ public class CustomSword extends ItemSword {
 		// TODO Auto-generated constructor stub
 		this.setRegistryName("basalt_sword");
 		this.setUnlocalizedName("basalt_sword");
-		this.setCreativeTab(CreativeTabs.COMBAT);
+		this.setCreativeTab(random_objects_main.romodCreativeTabs);
 	}
 
 }

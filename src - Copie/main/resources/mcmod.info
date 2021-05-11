@@ -3,7 +3,7 @@
   "modid": "romod",
   "name": "random objects",
   "description": "a mod that add random (and useful) items",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "mcversion": "1.12.2",
   "url": "",
   "updateUrl": "",
@@ -11,10 +11,25 @@
   "credits": "mikaki9 at the developement architecture
 prysonnier0 at the texture departement
 mikaki9 at the compilation
-thanks to myster_ben and amvolf for certains of ideas were used
-and thanks to YOU for the download",
-  "logoFile": "/logo.png",
-  "screenshots": [],
+thanks to Myster_ben and Amvolf for certains of ideas were used
+Thanks to ath256 for some traduction errors correction
+and thanks to YOU for the download
+
+
+patchnote:
+-Adding a new feature : firends. You can now see if your friends are on your game
+-Adding a new menu: Friends modification menu
+-Better translation
+-The Basalt Block now reintegrate the creative tabs
+-New creative tab, the random objects one
+-Adding the basalt fragment
+-Adding the basalt ingot 
+-The basalt armor now craft with basalt ingots
+-Patching small bugs
+-Main menu now gives friends on your game
+",
+  "logoFile": "logo.png",
+  "screenshots": ["screenshot_1.png","logo.png"],
   "dependencies": []
 }
 ]

@@ -13,7 +13,14 @@ import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.translation.I18n;
 
-
+/**
+ * This class is the GUI of the friends management menu, It take no argument
+ * 
+ * @since 1.2.0
+ * @version 1.3
+ * @author Thorchlomo
+ *
+ */
 
 public class AddFriends extends GuiScreen{
 	

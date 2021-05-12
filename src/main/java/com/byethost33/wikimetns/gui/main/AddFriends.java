@@ -133,9 +133,9 @@ public class AddFriends extends GuiScreen{
 			e.printStackTrace();
 		}
 		
-		/**
+		/*
 		 * Part used to check click in the delete buttons
-		**/
+		 */
 		
 		
 		

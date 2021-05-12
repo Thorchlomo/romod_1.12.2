@@ -85,12 +85,12 @@ public class random_objects_main
     public static Item basalt_leggings;
     public static Item basalt_boots;
     
-    /**
+    /*
     public static Item obsidian_helmet;
     public static Item obsidian_chestplate;
     public static Item obsidian_leggings;
     public static Item obsidian_boots;
-    **/
+    */
     
     public static ArmorMaterial ARMOR_MATERIAL_BASALT;
     public static ArmorMaterial ARMOR_MATERIAL_OBSIDIAN;

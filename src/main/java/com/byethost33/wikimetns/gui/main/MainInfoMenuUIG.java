@@ -110,7 +110,7 @@ public class MainInfoMenuUIG extends GuiScreen {
 		
 		//super.drawScreen(mouseX, mouseY, partialTicks);	
 		
-		/**
+		/*
 		 * 		FRIENDS WIDGET PART
 		 */
 		
@@ -144,9 +144,9 @@ public class MainInfoMenuUIG extends GuiScreen {
 					drawString(fontRenderer, I18n.translateToLocal(loadedPlayerName), 10, baseYFriends, 0xffffff);
 					
 					
-					/**
+					/*
 					 * 		PART WHO SHOW UP FRIENDS HEAD
-					 **/
+					 */
 					ResourceLocation resourcelocation = DefaultPlayerSkin.getDefaultSkinLegacy();
 			    	
 			    	Minecraft minecraft = Minecraft.getMinecraft();
@@ -167,9 +167,9 @@ public class MainInfoMenuUIG extends GuiScreen {
 			        mc.renderEngine.bindTexture(resourcelocation);
 			        drawModalRectWithCustomSizedTexture(1, baseYFriends, 8, 8, 8,8,64,64);
 			        
-			        /**
+			        /*
 			         * 		END PART INCREMENTATION FOR NEXT TURN
-			         **/
+			         */
 					baseYFriends = baseYFriends + 8;
 					indexFriends ++;
 				}

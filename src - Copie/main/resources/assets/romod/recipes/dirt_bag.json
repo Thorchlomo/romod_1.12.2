@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XDX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "minecraft:leather"
+    },
+    "D": {
+      "item": "minecraft:dirt",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "romod:dirt_bag"
+  }
+
+
+}

@@ -1,0 +1,15 @@
+{
+	"type":"minecraft:crafting_shaped",
+	"pattern":["#  ","XXX","O O"],
+	"key":{	
+		"#":{"item":"minecraft:iron_bars"},
+		"X":{"item": "minecraft:planks",
+      		 "data": 0
+      },
+		"O":{"item":"minecraft:fence"}
+	},
+	"result":{
+	"item":"romod:wheel_barrows",
+	"count":2
+	}
+}

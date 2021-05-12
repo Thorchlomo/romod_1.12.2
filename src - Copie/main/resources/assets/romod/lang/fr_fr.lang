@@ -1,0 +1,38 @@
+item.basalt_sword.name=Épée en Basalte
+item.basalt_i.name=Basalte
+item.basalt_block.name=Block de Basalte
+item.basalt_fragment.name=Fragment de Basalte
+item.basalt_ingot.name=Lingot en Basalte
+item.double_houe.name=Double Houe
+item.redstone_stick.name=Bâton de Redstone
+item.basalt_block_item.name=Block de Basalte
+item.wheel_barrows.name=Brouette
+item.transplanter.name=Transplanteur
+item.dirt_bag.name=Sac de Terre
+item.flower_kit.name=Fleur en Kit
+tile.basalt_block.name=Block de Basalte
+tile.wheel_barrows.name=Brouette
+item.basalt_helmet.name=Casque en Basalte
+item.basalt_chestplate.name=Plastron en Basalte
+item.basalt_leggings.name=Jambières en Basalte
+item.basalt_boots.name=Bottes en Basalte
+
+
+
+
+command.whereiam.usage=/whereiam = Donne votre position actuelle très précisément.
+
+
+romod.get_coords.key=Récupérer Les Coordonnés
+romod.main_menu.key=Menu Principal De Random Objects
+
+romod.gui.menu.like=Ajouter Aux Favoris 
+romod.gui.menu.saturation=Saturation
+romod.gui.menu.friends.list=Amis 
+romod.gui.menu.friends.connected=Amis Connectés :
+romod.gui.menu.friends.too= de plus...
+romod.gui.menu.friends.add=Ajouter Un Ami
+romod.gui.menu.friends.add.2=Ajouter
+romod.gui.menu.friends.remove=Retirer
+
+itemGroup.ROMOD=Random Objects

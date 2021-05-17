@@ -17,7 +17,5 @@ jobs:
       with:
         java-version: '8'
         distribution: 'adopt'
-    - name: Test the Eclipse Gen
-      run: ./gradlew genEclipseRun
     - name: Test the build
       run: ./gradlew build

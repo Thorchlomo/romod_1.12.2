@@ -1,0 +1,36 @@
+# This workflow will build a package using Gradle
+# Thaks to the dodogang for parts of the code
+
+name: Check if your version is buildable
+
+on: [ pull_request, push ]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        # Use these Java versions
+        java: [
+            8,    # Minimum supported by Minecraft, used by the devs
+            11,   # Seconde most used version
+            14,   # Some Version
+        ]
+        # We want to run on unbuntu, windows and macos
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        # Check if you don't do weird thingd
+      - name: Antivirus check of gradle
+        uses: gradle/wrapper-validation-action@v1
+      - name: Set up JDK ${{ matrix.java }}
+        uses: actions/setup-java@v2
+        with:
+          distribution: adopt
+          java-version: ${{ matrix.java }}
+      - name: Make gradle wrapper executable
+        if: ${{ runner.os != 'Windows' }}
+        run: chmod +x ./gradlew
+      - name: Build
+        run: ./gradlew build

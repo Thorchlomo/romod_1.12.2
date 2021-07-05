@@ -86,6 +86,7 @@ public class CommonProxy {
 		event.getRegistry().registerAll(random_objects_main.wheel_barrows);
 		event.getRegistry().registerAll(random_objects_main.wheel_barrows_dirt);
 		event.getRegistry().registerAll(random_objects_main.wheel_barrows_tulip);
+		event.getRegistry().registerAll(random_objects_main.romod_smelter);
 	}
 	
 	public static void otherRegistries() {

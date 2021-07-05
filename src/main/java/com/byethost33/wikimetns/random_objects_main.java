@@ -18,6 +18,7 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
@@ -30,9 +31,11 @@ import com.byethost33.wikimetns.block.*;
 import com.byethost33.wikimetns.block.wheel.barrows.wheel_barrows_dirt;
 import com.byethost33.wikimetns.gen.worldGen;
 import com.byethost33.wikimetns.gui.RomodCreativeTabs;
+import com.byethost33.wikimetns.handlers.GuiHandler;
 import com.byethost33.wikimetns.init.biome_init;
 import com.byethost33.wikimetns.item.*;
 import com.byethost33.wikimetns.item.armor.basalt_armor;
+import com.byethost33.wikimetns.tile.TileRomodSmelter;
 import com.byethost33.wikimetns.util.DataFileReader;
 
 @Mod(modid = random_objects_main.MODID, name = random_objects_main.NAME, version = random_objects_main.VERSION)
@@ -96,6 +99,7 @@ public class random_objects_main
     public static ArmorMaterial ARMOR_MATERIAL_OBSIDIAN;
     
     public static Block basalt_block = new basalt_block("basalt_block", Material.ROCK);
+    public static Block romod_smelter = new RomodSmelter(null);
     
     public static CreativeTabs romodCreativeTabs = new RomodCreativeTabs("ROMOD");
     
@@ -104,7 +108,8 @@ public class random_objects_main
     
     
     
-    @EventHandler
+    @SuppressWarnings("deprecation")
+	@EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
     	
@@ -173,8 +178,9 @@ public class random_objects_main
         
         
         
-        
-        
+        // Gui for romod_smelter
+        GameRegistry.registerTileEntity(TileRomodSmelter.class, "romod:tile_romod_smelter");
+        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
     }
 
     @EventHandler

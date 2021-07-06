@@ -25,12 +25,12 @@ public class ContainerRomodSmelter extends Container{
 	 
 	    int i;
 	    
-	    this.addSlotToContainer(new Slot(tile, 0, 33 + 1 * 18, 7));
-	    this.addSlotToContainer(new Slot(tile, 1, 33 + 2 * 18, 7));
+	    this.addSlotToContainer(new Slot(tile, 0, 48, 17));
+	    this.addSlotToContainer(new Slot(tile, 1, 117, 8));
 	    
-	    this.addSlotToContainer(new SlotSingleItem(tile, 2 + 2, 42, 40 + 1 * 18,Item.getItemFromBlock(Blocks.PLANKS)));
+	    this.addSlotToContainer(new SlotSingleItem(tile, 4, 48, 53,Item.getItemFromBlock(Blocks.PLANKS)));
 	    
-	    this.addSlotToContainer(new SlotOutput(tile, 3, 116, 17));
+	    this.addSlotToContainer(new SlotOutput(tile, 3, 117, 35));
 	 
 	    for(i = 0; i < 3; ++i) {
 	        for(int j = 0; j < 9; ++j) {

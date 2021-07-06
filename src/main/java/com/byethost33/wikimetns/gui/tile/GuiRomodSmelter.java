@@ -9,13 +9,15 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 
 public class GuiRomodSmelter extends GuiContainer{
-	private static final ResourceLocation background = new ResourceLocation(random_objects_main.MODID + ":textures/gui/saturation.png");
+	private static final ResourceLocation background = new ResourceLocation(random_objects_main.MODID + ":textures/gui/container/romod_smelter.png");
+	private final InventoryPlayer playerInventory;
 	private TileRomodSmelter tile;
 	
 	public GuiRomodSmelter(TileRomodSmelter tile, InventoryPlayer playerInv) {
         super(new ContainerRomodSmelter(tile, playerInv));
         
         System.out.println("Did the machine is in debug ?");
+        this.playerInventory = playerInv;
         this.tile = tile;
 	}
 
@@ -38,11 +40,12 @@ public class GuiRomodSmelter extends GuiContainer{
 	    if (this.tile.isBurning()) {
 	        int burningTime = this.tile.getField(0);
 	        int textureHeight = (int) (12f / this.tile.getFullBurnTime() * burningTime);
-	        this.drawTexturedModalRect(i + 37, j + 26 + 12 - textureHeight,
-	                177, 12 - textureHeight, 27, textureHeight);
+	        this.drawTexturedModalRect(i + 48, j + 35 + 12 - textureHeight,
+	                176, 11 - textureHeight, 27, textureHeight + 2);
 	    }
 	 
-	    this.fontRenderer.drawString(this.tile.getName(), i + 80, j + 45, 0xFFFFFF);
+	    this.fontRenderer.drawString(this.tile.getName(), i + 8, j + 6, 4210752);
+	    this.fontRenderer.drawString(this.playerInventory.getDisplayName().getUnformattedText(),i + 8, j + this.ySize - 96 + 2, 4210752);
 		
 	}
 }

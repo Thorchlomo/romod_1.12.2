@@ -189,7 +189,7 @@ public class TileRomodSmelter extends TileEntityLockable implements ITickable {
 	}
 	
 	public boolean hasFuelEmpty() {
-	    return this.getStackInSlot(2).isEmpty() || this.getStackInSlot(3).isEmpty();
+	    return this.getStackInSlot(2).isEmpty(); 
 	}
 	
 	public ItemStack getRecipeResult() {
@@ -205,16 +205,16 @@ public class TileRomodSmelter extends TileEntityLockable implements ITickable {
 	    if (result != null) {
 	 
 	        // We check if we can inject items into slot 4
-	        ItemStack slot4 = this.getStackInSlot(4);
+	        ItemStack slot3 = this.getStackInSlot(3);
 	 
 	       
-	        if (slot4.isEmpty())
+	        if (slot3.isEmpty())
 	            return true;
 	 
 	        // Else if it's not free, wee check is the same item that the one we will create
-	        if (slot4.getItem() == result.getItem() && slot4.getItemDamage() == result.getItemDamage()) {
-	            int newStackSize = slot4.getCount() + result.getCount();
-	            if (newStackSize <= this.getInventoryStackLimit() && newStackSize <= slot4.getMaxStackSize()) {
+	        if (slot3.getItem() == result.getItem() && slot3.getItemDamage() == result.getItemDamage()) {
+	            int newStackSize = slot3.getCount() + result.getCount();
+	            if (newStackSize <= this.getInventoryStackLimit() && newStackSize <= slot3.getMaxStackSize()) {
 	                return true;
 	            }
 	        }
@@ -229,14 +229,14 @@ public class TileRomodSmelter extends TileEntityLockable implements ITickable {
 	    this.decrStackSize(0, 1);
 	    this.decrStackSize(1, 1);
 	    // On récupère le slot de résultat
-	    ItemStack stack4 = this.getStackInSlot(4);
+	    ItemStack stack3 = this.getStackInSlot(3);
 	    // Si il est vide
-	    if (stack4.isEmpty()) {
+	    if (stack3.isEmpty()) {
 	        // On y insère une copie du résultat
-	        this.setInventorySlotContents(4, result.copy());
+	        this.setInventorySlotContents(3, result.copy());
 	    } else {
 	        // Sinon on augmente le nombre d'objets de l'ItemStack
-	        stack4.setCount(stack4.getCount() + result.getCount());
+	        stack3.setCount(stack3.getCount() + result.getCount());
 	    }
 	}
 	
@@ -245,7 +245,7 @@ public class TileRomodSmelter extends TileEntityLockable implements ITickable {
 	    return 200;
 	}
 	 
-	/** Temps que dure 1 unité de carburant (ici : 1 planche + 1 blé) */
+	/** Temps que dure 1 unité de carburant (ici : 1 planche) */
 	public int getFullBurnTime() {
 	    return 300;
 	}

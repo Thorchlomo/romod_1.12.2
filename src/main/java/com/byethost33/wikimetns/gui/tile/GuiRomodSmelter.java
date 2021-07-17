@@ -32,11 +32,17 @@ public class GuiRomodSmelter extends GuiContainer{
 	    this.drawDefaultBackground();
 	    this.mc.getTextureManager().bindTexture(background);
 	    this.drawTexturedModalRect(i, j, 0, 0, this.xSize, this.ySize);
-	 
+	    
+	    /*
+	     * The cooking annimation
+	     */
 	    int timePassed = this.tile.getField(1);
-	    int textureWidth = (int) (23f / 200f * timePassed);
-	    this.drawTexturedModalRect(i + 81, j + 24, 177, 18, textureWidth, 7);
-	 
+	    int textureWidth = (int) (40f / 200f * timePassed);
+	    this.drawTexturedModalRect(i + 68, j + 35, 177, 14, textureWidth, 17);
+	    
+	    /*
+	     * The fire annimation
+	     */
 	    if (this.tile.isBurning()) {
 	        int burningTime = this.tile.getField(0);
 	        int textureHeight = (int) (12f / this.tile.getFullBurnTime() * burningTime);

@@ -8,6 +8,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ItemStackHelper;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityLockable;
@@ -189,7 +190,7 @@ public class TileRomodSmelter extends TileEntityLockable implements ITickable {
 	}
 	
 	public boolean hasFuelEmpty() {
-	    return this.getStackInSlot(2).isEmpty(); 
+		return this.getStackInSlot(4).isEmpty(); 
 	}
 	
 	public ItemStack getRecipeResult() {
@@ -271,7 +272,7 @@ public class TileRomodSmelter extends TileEntityLockable implements ITickable {
 	        if (!this.isBurning() && this.canSmelt() && !this.hasFuelEmpty()) {
 	            this.burningTimeLeft = this.getFullBurnTime();
 	            this.decrStackSize(2, 1);
-	            this.decrStackSize(3, 1);
+	            //this.decrStackSize(0, 1);
 	        }
 	 
 	        /* Si on peut faire cuire la recette et que le feu cuit */
@@ -284,7 +285,9 @@ public class TileRomodSmelter extends TileEntityLockable implements ITickable {
 	        } else {
 	            timePassed = 0;
 	        }
+	        //System.out.println(this.canSmelt());
 	        this.markDirty();
+	        
 	    }
 	}
 }

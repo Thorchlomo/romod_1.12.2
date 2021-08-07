@@ -28,18 +28,22 @@ public class ContainerRomodSmelter extends Container{
 	    this.addSlotToContainer(new Slot(tile, 0, 48, 17));
 	    this.addSlotToContainer(new Slot(tile, 1, 117, 8));
 	    
-	    this.addSlotToContainer(new SlotSingleItem(tile, 4, 48, 53,Item.getItemFromBlock(Blocks.PLANKS)));
+	    this.addSlotToContainer(new SlotSingleItem(tile, 2, 48, 53,Item.getItemFromBlock(Blocks.PLANKS)));
 	    
 	    this.addSlotToContainer(new SlotOutput(tile, 3, 117, 35));
 	 
 	    for(i = 0; i < 3; ++i) {
 	        for(int j = 0; j < 9; ++j) {
 	            this.addSlotToContainer(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+	            System.out.println("Principal");
+	            System.out.println(j + i * 9 + 9);
 	        }
 	    }
 	 
 	    for(i = 0; i < 9; ++i) {
 	        this.addSlotToContainer(new Slot(playerInventory, i, 8 + i * 18, 142));
+	        System.out.println("secondaire");
+	        System.out.println(i);
 	    }
 	}
 	
@@ -85,8 +89,48 @@ public class ContainerRomodSmelter extends Container{
 	
 	
 	//TODO set on the shift click !
+	/**
+	* Called when a player shift-clicks on a slot. You must override this or you will crash when someone does that.
+	*/
 	@Override
-	public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
-	    return ItemStack.EMPTY;
+	public ItemStack transferStackInSlot(EntityPlayer player, int index) {
+		ItemStack stackToReturn = ItemStack.EMPTY;
+		Slot slot = this.inventorySlots.get(index);
+		
+		
+		//We check if the slot is empty or not
+		if(slot != null && slot.getHasStack()) {
+			ItemStack stack = slot.getStack();
+            stackToReturn = stack.copy();
+            
+            if (index < 10) {
+                // On inverse pour remplir la hotbar en premier
+                if (!this.mergeItemStack(stack, 9, 35, true)) {
+                    return ItemStack.EMPTY;
+                }
+            }
+            
+            else if (!this.mergeItemStack(stack, 0, 4, false)) {
+                return ItemStack.EMPTY;
+            }
+ 
+            
+            // Si il a été complètement déplacé on met ItemStack#EMPTY dans le
+            // slot
+            if (stack.isEmpty()) {
+                slot.putStack(ItemStack.EMPTY);
+            }
+            // Sinon on signale que le contenu a changé.
+            // Slot#putStack appelle Slot#onSlotChanged c'est pourquoi on ne le
+            // fait pas ci-dessus
+            else {
+                slot.onSlotChanged();
+            }
+        }
+		
+		return stackToReturn;
+		
+	
 	}
+
 }

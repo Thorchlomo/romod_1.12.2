@@ -5,10 +5,8 @@ import com.byethost33.wikimetns.util.RecipesRomodSMelter;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ItemStackHelper;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityLockable;
@@ -169,12 +167,12 @@ public class TileRomodSmelter extends TileEntityLockable implements ITickable {
 	 */
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
-	    // Le slot 3 je n'autorise que les planches de bois
+	    // Le slot 2 je n'autorise que les planches de bois
 	    if (index == 2)
 	        return OreDictionary.getOres("plankWood").contains(
 	                new ItemStack(stack.getItem(), 1,
 	                        OreDictionary.WILDCARD_VALUE));
-	    // Le slot 4 (celui du résultat) je n'autorise rien
+	    // Le slot 3 (celui du résultat) je n'autorise rien
 	    if (index == 3)
 	        return false;
 	    // Sinon pour les slots 1 et 2 on met ce qu'on veut
@@ -190,7 +188,7 @@ public class TileRomodSmelter extends TileEntityLockable implements ITickable {
 	}
 	
 	public boolean hasFuelEmpty() {
-		return this.getStackInSlot(4).isEmpty(); 
+		return this.getStackInSlot(2).isEmpty(); 
 	}
 	
 	public ItemStack getRecipeResult() {
@@ -205,7 +203,7 @@ public class TileRomodSmelter extends TileEntityLockable implements ITickable {
 	    // While it's null, there's no recipe patern correct
 	    if (result != null) {
 	 
-	        // We check if we can inject items into slot 4
+	        // We check if we can inject items into slot 2
 	        ItemStack slot3 = this.getStackInSlot(3);
 	 
 	       

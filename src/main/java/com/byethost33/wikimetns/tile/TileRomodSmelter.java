@@ -1,6 +1,7 @@
 package com.byethost33.wikimetns.tile;
 
 
+import com.byethost33.wikimetns.block.RomodSmelter;
 import com.byethost33.wikimetns.util.RecipesRomodSMelter;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -259,8 +260,9 @@ public class TileRomodSmelter extends TileEntityLockable implements ITickable {
 	    if (!this.world.isRemote) {
 	 
 	        /* Si le carburant brûle, on réduit réduit le temps restant */
-	        if (this.isBurning()) {
+	        if (burningTimeLeft > 0) {
 	            this.burningTimeLeft--;
+	            RomodSmelter.setState(true, world, pos);
 	        }
 	 
 	        /*
@@ -282,6 +284,10 @@ public class TileRomodSmelter extends TileEntityLockable implements ITickable {
 	            }
 	        } else {
 	            timePassed = 0;
+	        }
+	        
+	        if (this.isBurning() == false) {
+	        	RomodSmelter.setState(false, world, pos);
 	        }
 	        //System.out.println(this.canSmelt());
 	        this.markDirty();

@@ -52,6 +52,7 @@ public class CommonProxy {
 		registerRender(random_objects_main.basalt_chestplate);
 		registerRender(random_objects_main.basalt_leggings);
 		registerRender(random_objects_main.basalt_boots);
+		registerRender(random_objects_main.romod_smelter_item);
 		//registerRender(random_objects_main.obsidian_helmet);
 	}
 	
@@ -76,6 +77,7 @@ public class CommonProxy {
 		event.getRegistry().registerAll(random_objects_main.basalt_chestplate);
 		event.getRegistry().registerAll(random_objects_main.basalt_leggings);
 		event.getRegistry().registerAll(random_objects_main.basalt_boots);
+		event.getRegistry().registerAll(random_objects_main.romod_smelter_item);
 		//event.getRegistry().registerAll(random_objects_main.obsidian_helmet);
 		
 	}

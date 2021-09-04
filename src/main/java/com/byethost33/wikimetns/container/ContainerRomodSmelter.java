@@ -35,15 +35,11 @@ public class ContainerRomodSmelter extends Container{
 	    for(i = 0; i < 3; ++i) {
 	        for(int j = 0; j < 9; ++j) {
 	            this.addSlotToContainer(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
-	            System.out.println("Principal");
-	            System.out.println(j + i * 9 + 9);
 	        }
 	    }
 	 
 	    for(i = 0; i < 9; ++i) {
 	        this.addSlotToContainer(new Slot(playerInventory, i, 8 + i * 18, 142));
-	        System.out.println("secondaire");
-	        System.out.println(i);
 	    }
 	}
 	

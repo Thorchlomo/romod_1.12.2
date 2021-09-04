@@ -63,6 +63,7 @@ public class random_objects_main
     public static Item basalt_sword;
     public static Item basalt_i;
     public static Item basalt_block_item;
+    public static Item romod_smelter_item;
     public static Item basalt_ingot;
     public static Item basalt_fragment;
     public static Item wheel_barrows_item;
@@ -99,7 +100,7 @@ public class random_objects_main
     public static ArmorMaterial ARMOR_MATERIAL_OBSIDIAN;
     
     public static Block basalt_block = new basalt_block("basalt_block", Material.ROCK);
-    public static Block romod_smelter = new RomodSmelter(null);
+    public static Block romod_smelter;
     
     public static CreativeTabs romodCreativeTabs = new RomodCreativeTabs("ROMOD");
     
@@ -176,7 +177,8 @@ public class random_objects_main
         		
         //obsidian_helmet = new obsidian_armor("obsidian_helemet", ARMOR_MATERIAL_OBSIDIAN, EntityEquipmentSlot.HEAD);
         
-        
+        romod_smelter = new RomodSmelter(false);
+        romod_smelter_item = new ItemBlock(random_objects_main.romod_smelter).setRegistryName(random_objects_main.romod_smelter.getRegistryName());
         
         // Gui for romod_smelter
         GameRegistry.registerTileEntity(TileRomodSmelter.class, "romod:tile_romod_smelter");

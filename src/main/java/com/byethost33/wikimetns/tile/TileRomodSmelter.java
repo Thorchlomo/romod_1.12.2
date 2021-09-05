@@ -2,7 +2,7 @@ package com.byethost33.wikimetns.tile;
 
 
 import com.byethost33.wikimetns.block.RomodSmelter;
-import com.byethost33.wikimetns.util.RecipesRomodSMelter;
+import com.byethost33.wikimetns.util.RecipesRomodSmelter;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -193,7 +193,7 @@ public class TileRomodSmelter extends TileEntityLockable implements ITickable {
 	}
 	
 	public ItemStack getRecipeResult() {
-	    return RecipesRomodSMelter.getRecipeResult(new ItemStack[] {
+	    return RecipesRomodSmelter.getRecipeResult(new ItemStack[] {
 	            this.getStackInSlot(0), this.getStackInSlot(1) });
 	}
 	
@@ -263,6 +263,7 @@ public class TileRomodSmelter extends TileEntityLockable implements ITickable {
 	        if (burningTimeLeft > 0) {
 	            this.burningTimeLeft--;
 	            RomodSmelter.setState(true, world, pos);
+	            
 	        }
 	 
 	        /*
@@ -294,4 +295,6 @@ public class TileRomodSmelter extends TileEntityLockable implements ITickable {
 	        
 	    }
 	}
+	
+	
 }

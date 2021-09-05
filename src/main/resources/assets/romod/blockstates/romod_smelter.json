@@ -1,0 +1,14 @@
+{
+    "variants": 
+    {
+        "burning=false,facing=north": { "model": "romod:romod_smelter" },
+        "burning=false,facing=east": { "model": "romod:romod_smelter", "y": 90 },
+        "burning=false,facing=south": { "model": "romod:romod_smelter", "y": 180 },
+        "burning=false,facing=west": { "model": "romod:romod_smelter", "y": 270 },
+        "burning=true,facing=north": { "model": "romod:lit_romod_smelter" },
+        "burning=true,facing=east": { "model": "romod:lit_romod_smelter", "y": 90 },
+        "burning=true,facing=south": { "model": "romod:lit_romod_smelter", "y": 180 },
+        "burning=true,facing=west": { "model": "romod:lit_romod_smelter", "y":270  },
+        "inventory": { "model": "romod:romod_smelter" }
+    }
+}

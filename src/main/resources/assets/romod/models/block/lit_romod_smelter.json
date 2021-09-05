@@ -1,0 +1,9 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "up": "romod:blocks/romod_smelter_top",
+        "front": "romod:blocks/romod_smelter_front_on",
+        "side": "blocks/furnace_top",
+        "down": "blocks/furnace_top"
+    }
+}

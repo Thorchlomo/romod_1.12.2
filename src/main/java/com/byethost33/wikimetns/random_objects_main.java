@@ -2,7 +2,9 @@ package com.byethost33.wikimetns;
 
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialLiquid;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
@@ -12,6 +14,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -28,6 +31,7 @@ import java.util.List;
 import org.apache.logging.log4j.Logger;
 
 import com.byethost33.wikimetns.block.*;
+import com.byethost33.wikimetns.block.fluids.LiquidBasalt;
 import com.byethost33.wikimetns.block.wheel.barrows.wheel_barrows_dirt;
 import com.byethost33.wikimetns.gen.worldGen;
 import com.byethost33.wikimetns.gui.RomodCreativeTabs;
@@ -83,6 +87,9 @@ public class random_objects_main
     
     public static Block wheel_barrows_tulip;
     
+    // Block Fluid
+    public static Block liquid_basalt_block;
+    
     //armor
     public static Item basalt_helmet;
     public static Item basalt_chestplate;
@@ -99,12 +106,15 @@ public class random_objects_main
     public static ArmorMaterial ARMOR_MATERIAL_BASALT;
     public static ArmorMaterial ARMOR_MATERIAL_OBSIDIAN;
     
+    public static Material LIQUID_BASALT;
+    
     public static Block basalt_block = new basalt_block("basalt_block", Material.ROCK);
     public static Block romod_smelter;
     
     public static CreativeTabs romodCreativeTabs = new RomodCreativeTabs("ROMOD");
     
-    
+
+	static {FluidRegistry.enableUniversalBucket();}
    
     
     
@@ -131,9 +141,22 @@ public class random_objects_main
     	
     	proxy.preInit(event.getSuggestedConfigurationFile());
     	biome_init.regsiterBiomes();
+    	FluidRegistry.registerFluid(LiquidBasalt.LiquidBasalt);
+    	FluidRegistry.addBucketForFluid(LiquidBasalt.LiquidBasalt);
+    	
+    	
+    	
+    	
+    	
     	//déclaration des matériaux
         basalt = EnumHelper.addToolMaterial("basalt", 4, 6, 20.0F, 26.0F, 30);
         super_diamond = EnumHelper.addToolMaterial("super_diamond", 3, 1542, 20.0F, 10.0F, 20);
+        
+        //déclaration des matériaux liquides
+        LIQUID_BASALT = new MaterialLiquid(MapColor.OBSIDIAN);
+        
+        //déclaration des blocks de liquides
+        liquid_basalt_block = new BlockFluid("liquid_basalt", LiquidBasalt.LiquidBasalt, Material.LAVA);
         
         
         //déclaration des armor material

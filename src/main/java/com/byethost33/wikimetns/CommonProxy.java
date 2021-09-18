@@ -4,16 +4,21 @@ package com.byethost33.wikimetns;
 
 import java.io.File;
 
+import com.byethost33.wikimetns.block.fluids.LiquidBasalt;
 import com.byethost33.wikimetns.init.biome_init;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import scala.reflect.internal.Trees.This;
 
 @Mod.EventBusSubscriber
 public class CommonProxy {
@@ -80,6 +85,9 @@ public class CommonProxy {
 		event.getRegistry().registerAll(random_objects_main.romod_smelter_item);
 		//event.getRegistry().registerAll(random_objects_main.obsidian_helmet);
 		
+
+		event.getRegistry().registerAll(new ItemBlock(random_objects_main.liquid_basalt_block).setRegistryName(random_objects_main.liquid_basalt_block.getRegistryName()));
+		
 	}
 	
 	@SubscribeEvent
@@ -89,9 +97,13 @@ public class CommonProxy {
 		event.getRegistry().registerAll(random_objects_main.wheel_barrows_dirt);
 		event.getRegistry().registerAll(random_objects_main.wheel_barrows_tulip);
 		event.getRegistry().registerAll(random_objects_main.romod_smelter);
+		event.getRegistry().registerAll(random_objects_main.liquid_basalt_block);
 	}
 	
+	
 	public static void otherRegistries() {
+		
+	
 		
 		
 		biome_init.regsiterBiomes();

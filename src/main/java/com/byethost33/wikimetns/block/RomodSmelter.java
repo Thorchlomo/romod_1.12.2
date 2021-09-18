@@ -34,6 +34,7 @@ public class RomodSmelter extends BlockContainer {
 	
 	public RomodSmelter(boolean isBurning) {
 		super(Material.ROCK);
+		this.setLightLevel(0);
 		this.setRegistryName("romod_smelter");
 		this.setUnlocalizedName("romod_smelter");
 		this.setCreativeTab(random_objects_main.romodCreativeTabs);
@@ -137,12 +138,16 @@ public class RomodSmelter extends BlockContainer {
         return new BlockStateContainer(this, FACING, BURNING);
     }
     
-    @SuppressWarnings({ "incomplete-switch", "static-access" })
-    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
+    
+    @SuppressWarnings("incomplete-switch")
+	public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
     {
     	
     	if (worldIn.getBlockState(pos).getValue(BURNING) == true)
         {
+    		
+    		this.setLightLevel(15);
+    		
         	//System.out.println("Burning !");
             EnumFacing enumfacing = (EnumFacing)stateIn.getValue(FACING);
             double d0 = (double)pos.getX() + 0.5D;
@@ -155,9 +160,11 @@ public class RomodSmelter extends BlockContainer {
                 worldIn.playSound((double)pos.getX() + 0.5D, (double)pos.getY(), (double)pos.getZ() + 0.5D, SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
             }
             
+            // Particules de la cheminée
             worldIn.spawnParticle(EnumParticleTypes.SMOKE_LARGE, d0, d1 + 1D, d2, 0.0D, 0.0D, 0.0D);
             worldIn.spawnParticle(EnumParticleTypes.SMOKE_LARGE, d0, d1 + 1D, d2, 0.0D, 0.0D, 0.0D);
             
+            // Particules "normales" des fours
             switch (enumfacing)
             {
                 case WEST:
